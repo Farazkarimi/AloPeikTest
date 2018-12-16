@@ -1,0 +1,16 @@
+PODS:
+  - Fakery (3.4.0)
+
+DEPENDENCIES:
+  - Fakery
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Fakery
+
+SPEC CHECKSUMS:
+  Fakery: 885e894a3e7c392e1da96c6e46a1abe5a0b28686
+
+PODFILE CHECKSUM: 02069502c39a29f5d9b89a07ce3871833cad331a
+
+COCOAPODS: 1.5.0

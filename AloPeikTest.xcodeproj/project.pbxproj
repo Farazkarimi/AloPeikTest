@@ -20,6 +20,12 @@
 		D0281F8321C670C300914B69 /* OrdersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0281F8221C670C300914B69 /* OrdersManager.swift */; };
 		D0281F8521C695BA00914B69 /* ActiveOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0281F8421C695BA00914B69 /* ActiveOrdersTableViewController.swift */; };
 		D0281F8721C695EA00914B69 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0281F8621C695EA00914B69 /* CategoriesTableViewController.swift */; };
+		D0281F8A21C6A8F500914B69 /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0281F8821C6A8F500914B69 /* ProductsTableViewController.swift */; };
+		D0281F8B21C6A8F500914B69 /* ProductsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0281F8921C6A8F500914B69 /* ProductsTableViewController.xib */; };
+		D0281F8E21C6A96400914B69 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0281F8C21C6A96400914B69 /* ProductsTableViewCell.swift */; };
+		D0281F8F21C6A96400914B69 /* ProductsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0281F8D21C6A96400914B69 /* ProductsTableViewCell.xib */; };
+		D0281F9221C6BBFA00914B69 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0281F9021C6BBFA00914B69 /* MapViewController.swift */; };
+		D0281F9521C6C49F00914B69 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0281F9421C6C49E00914B69 /* MapViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,12 @@
 		D0281F8221C670C300914B69 /* OrdersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersManager.swift; sourceTree = "<group>"; };
 		D0281F8421C695BA00914B69 /* ActiveOrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveOrdersTableViewController.swift; sourceTree = "<group>"; };
 		D0281F8621C695EA00914B69 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
+		D0281F8821C6A8F500914B69 /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
+		D0281F8921C6A8F500914B69 /* ProductsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsTableViewController.xib; sourceTree = "<group>"; };
+		D0281F8C21C6A96400914B69 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
+		D0281F8D21C6A96400914B69 /* ProductsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsTableViewCell.xib; sourceTree = "<group>"; };
+		D0281F9021C6BBFA00914B69 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D0281F9421C6C49E00914B69 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		E394FDB2B00A490B2B29AE99 /* Pods-AloPeikTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AloPeikTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-AloPeikTest/Pods-AloPeikTest.release.xcconfig"; sourceTree = "<group>"; };
 		F6FD05C2827D962F3D35A15E /* Pods-AloPeikTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AloPeikTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AloPeikTest/Pods-AloPeikTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +122,12 @@
 			children = (
 				D0281F8421C695BA00914B69 /* ActiveOrdersTableViewController.swift */,
 				D0281F8621C695EA00914B69 /* CategoriesTableViewController.swift */,
+				D0281F8821C6A8F500914B69 /* ProductsTableViewController.swift */,
+				D0281F8921C6A8F500914B69 /* ProductsTableViewController.xib */,
+				D0281F8C21C6A96400914B69 /* ProductsTableViewCell.swift */,
+				D0281F8D21C6A96400914B69 /* ProductsTableViewCell.xib */,
+				D0281F9021C6BBFA00914B69 /* MapViewController.swift */,
+				D0281F9421C6C49E00914B69 /* MapViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,7 +213,10 @@
 			files = (
 				D0281F7021C51BB700914B69 /* LaunchScreen.storyboard in Resources */,
 				D0281F6D21C51BB700914B69 /* Assets.xcassets in Resources */,
+				D0281F8F21C6A96400914B69 /* ProductsTableViewCell.xib in Resources */,
+				D0281F9521C6C49F00914B69 /* MapViewController.xib in Resources */,
 				D0281F6B21C51BB600914B69 /* Main.storyboard in Resources */,
+				D0281F8B21C6A8F500914B69 /* ProductsTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,9 +272,12 @@
 				D0281F7B21C63FC700914B69 /* FakeDataClass.swift in Sources */,
 				D0281F6821C51BB600914B69 /* ViewController.swift in Sources */,
 				D0281F7F21C6402300914B69 /* ProductObject.swift in Sources */,
+				D0281F9221C6BBFA00914B69 /* MapViewController.swift in Sources */,
 				D0281F8721C695EA00914B69 /* CategoriesTableViewController.swift in Sources */,
 				D0281F6621C51BB600914B69 /* AppDelegate.swift in Sources */,
+				D0281F8E21C6A96400914B69 /* ProductsTableViewCell.swift in Sources */,
 				D0281F8121C6403A00914B69 /* OrderObject.swift in Sources */,
+				D0281F8A21C6A8F500914B69 /* ProductsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +427,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MBVQ55PYF5;
 				INFOPLIST_FILE = AloPeikTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = bistalk.AloPeikTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -419,7 +446,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MBVQ55PYF5;
 				INFOPLIST_FILE = AloPeikTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = bistalk.AloPeikTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

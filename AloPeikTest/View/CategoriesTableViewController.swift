@@ -20,10 +20,10 @@ class CategoriesTableViewController: UITableViewController {
     
     private func initialViews(){
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.topItem?.title = "Active Orders"
+        self.navigationController?.navigationBar.topItem?.title = "Categories"
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         
-        self.tableView.allowsSelection = false
+        self.tableView.allowsSelection = true
         //self.tableView.tableFooterView = UIView()
     }
     
@@ -52,8 +52,10 @@ class CategoriesTableViewController: UITableViewController {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let productsTableViewController = ProductsTableViewController(nibName: "ProductsTableViewController", bundle: nil)
+        productsTableViewController.categoryID = (self.categoriesDatasourceArray[indexPath.row] as! CategoryObject).categoryID
+        self.navigationController?.pushViewController(productsTableViewController, animated: true)
     }
     
 }

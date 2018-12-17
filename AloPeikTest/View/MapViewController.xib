@@ -12,6 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="mapVViewController" customModule="AloPeikTest" customModuleProvider="target">
             <connections>
+                <outlet property="addressLabel" destination="lzK-CT-y3T" id="6gM-DH-DsD"/>
+                <outlet property="cancelButton" destination="HM6-8d-pPC" id="8mG-5P-X9Y"/>
+                <outlet property="doneButton" destination="4V4-Nl-88c" id="nIV-gF-vRB"/>
+                <outlet property="mapView" destination="beF-f5-AOh" id="QH0-hN-fn6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,28 +27,42 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="beF-f5-AOh">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </mapView>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hHU-eW-fW0">
-                    <rect key="frame" x="0.0" y="637" width="375" height="30"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HM6-8d-pPC">
-                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
-                            <state key="normal" title="Button"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4V4-Nl-88c">
-                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
-                            <state key="normal" title="Button"/>
-                        </button>
-                    </subviews>
-                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4V4-Nl-88c">
+                    <rect key="frame" x="16" y="617" width="343" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Done"/>
+                    <connections>
+                        <action selector="locationSelected:" destination="-1" eventType="touchUpInside" id="YIl-Em-6HR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HM6-8d-pPC">
+                    <rect key="frame" x="16" y="579" width="343" height="30"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                    <state key="normal" title="Cancel"/>
+                    <connections>
+                        <action selector="cancelSelectingLocation:" destination="-1" eventType="touchUpInside" id="0RX-Dm-7Wh"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzK-CT-y3T">
+                    <rect key="frame" x="187.5" y="20" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="hHU-eW-fW0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3IY-ra-Ni3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HM6-8d-pPC" secondAttribute="trailing" constant="16" id="19e-5E-4Rd"/>
+                <constraint firstItem="4V4-Nl-88c" firstAttribute="top" secondItem="HM6-8d-pPC" secondAttribute="bottom" constant="8" id="3pD-Ga-Cwz"/>
+                <constraint firstItem="4V4-Nl-88c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="6vZ-RY-3rL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4V4-Nl-88c" secondAttribute="trailing" constant="16" id="FUI-7m-HC9"/>
                 <constraint firstAttribute="bottom" secondItem="beF-f5-AOh" secondAttribute="bottom" id="GYp-Ne-rPh"/>
+                <constraint firstItem="lzK-CT-y3T" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="H2Q-G3-Khj"/>
+                <constraint firstItem="lzK-CT-y3T" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="QfY-gO-Yv0"/>
                 <constraint firstItem="beF-f5-AOh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="U0H-bh-JAF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hHU-eW-fW0" secondAttribute="trailing" id="caE-2w-nI3"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hHU-eW-fW0" secondAttribute="bottom" id="erG-Ad-ECs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4V4-Nl-88c" secondAttribute="bottom" constant="20" id="V0T-RJ-U6j"/>
                 <constraint firstItem="beF-f5-AOh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gAW-Ex-ROn"/>
+                <constraint firstItem="HM6-8d-pPC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="h0A-jr-qah"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="beF-f5-AOh" secondAttribute="trailing" id="zoA-fs-JbE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

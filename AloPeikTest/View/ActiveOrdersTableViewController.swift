@@ -71,12 +71,29 @@ class ActiveOrdersTableViewController: UITableViewController,OrderManagerDelegat
         
         let order:OrderObject = ordersDatasourceArray?[indexPath.row] as! OrderObject
         
-        cell.textLabel?.text = order.orderName
-        cell.detailTextLabel?.text = order.orderAddress
-
+        cell.textLabel?.text = order.orderName!
+        cell.detailTextLabel?.text = {
+            if ((order.orderAddress) != nil){
+                return "Status: " + stringOrderStatus(order:order.orderStatus) + "     Address: " + order.orderAddress
+            }else{
+                return "Status: " + stringOrderStatus(order: order.orderStatus)
+            }
+        }()
         return cell
     }
-
+    
+    private func stringOrderStatus(order:orderState) -> String{
+        switch order {
+        case .delivered:
+            return "Delivered"
+        case .delivery:
+            return "Delivery"
+        case .inProgress:
+            return "In Progress"
+        case .pending:
+            return "Pending"
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

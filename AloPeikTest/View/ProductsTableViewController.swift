@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import MapKit
 
-class ProductsTableViewController: UITableViewController,UITabBarControllerDelegate,productCellDelegate {
+class ProductsTableViewController: UITableViewController,UITabBarControllerDelegate,productCellDelegate,mapViewControllerDelegate {
+    
+    func selectedlocation(product: ProductObject, selectedAddress: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        OrdersManager.sharedInstance.addOrder(name: product.productName!, address: selectedAddress, latitude: Double(latitude), longitude: Double(longitude))
+        self.tabBarController?.selectedIndex = 1
+    }
+    
     func didPressedBuyButton(product: ProductObject) {
         let mapViewController = MapViewController(nibName: "MapViewController", bundle: nil)
+        mapViewController.productObject = product
+        mapViewController.delegate = self
         self.present(mapViewController, animated: true, completion: nil)
     }
     
@@ -37,7 +46,7 @@ class ProductsTableViewController: UITableViewController,UITabBarControllerDeleg
     }
     
     private func initialValues(){
-        productsDataSurceArray = NSMutableArray(array: FakeDataClass.sharedInstance.generateProductForCategories(categoryID: self.categoryID, capacity: 15))
+        productsDataSurceArray = NSMutableArray(array: FakeDataGenerator.sharedInstance.generateProductForCategories(categoryID: self.categoryID, capacity: 15))
         self.tabBarController?.delegate = self
         self.tableView.allowsSelection = false
         self.tableView.reloadData()

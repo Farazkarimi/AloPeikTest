@@ -34,25 +34,27 @@ class OrdersManager: NSObject {
     public func addOrder(name:String, address:String, latitude:Double, longitude:Double){
         let order = OrderObject(orderName: name, orderAddress: address, orderStatus: orderState.pending, latitude: latitude, longitude: longitude)
         ordersArray.add(order)
-        self.delegate.didAddNewOrder(order: order)
-        self.updateOrderStatus(order: order)
+        if ((self.delegate) != nil){
+            self.delegate.didAddNewOrder(order: order)
     }
+    self.updateOrderStatus(order: order)
+}
+
+
+public func updateOrderStatus(order:OrderObject){
+    unowned let unownedSelf:OrdersManager = self
     
-    
-    public func updateOrderStatus(order:OrderObject){
-        unowned let unownedSelf:OrdersManager = self
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 30.0, execute: {
-            if order.orderStatus.rawValue<4{
-                order.orderStatus = orderState(rawValue: order.orderStatus.rawValue+1)
-                unownedSelf.delegate.didUpdateOrder(order: order)
-            }
-            unownedSelf.updateOrderStatus(order: order)
-        })
-    }
-    
-    
-    public func getActiveOrders() -> NSArray{
-        return ordersArray
-    }
+    DispatchQueue.main.asyncAfter(deadline: .now() + 30.0, execute: {
+        if order.orderStatus.rawValue<4{
+            order.orderStatus = orderState(rawValue: order.orderStatus.rawValue+1)
+            unownedSelf.delegate.didUpdateOrder(order: order)
+        }
+        unownedSelf.updateOrderStatus(order: order)
+    })
+}
+
+
+public func getActiveOrders() -> NSArray{
+    return ordersArray
+}
 }

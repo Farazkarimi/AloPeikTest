@@ -9,13 +9,13 @@
 import UIKit
 import Fakery
 
-class FakeDataClass: NSObject {
+class FakeDataGenerator: NSObject {
     private var categoryListArray:NSMutableArray!
     private var productDictionary:NSMutableDictionary!
     private var faker:Faker!
-    class var sharedInstance: FakeDataClass {
+    class var sharedInstance: FakeDataGenerator {
         struct Static {
-            static let instance: FakeDataClass = FakeDataClass()
+            static let instance: FakeDataGenerator = FakeDataGenerator()
         }
         return Static.instance
     }
@@ -34,7 +34,7 @@ class FakeDataClass: NSObject {
         let categories = NSMutableArray(capacity: Int(truncating: capacity))
         
         for i in 0...Int(truncating: capacity)-1 {
-            categories.add(CategoryObject(categoryName: self.faker.name.firstName(), categoryID: NSNumber(value: i)))
+            categories.add(CategoryObject(categoryName: self.faker.name.firstName() + " " + self.faker.company.name(), categoryID: NSNumber(value: i)))
         }
         categoryListArray = categories
         
@@ -48,7 +48,7 @@ class FakeDataClass: NSObject {
         
         let products = NSMutableArray(capacity: Int(truncating: capacity))
         for i in 0...Int(truncating: capacity)-1{
-            products.add(ProductObject(productName: self.faker.name.lastName(), productID: NSNumber(value: i), categoryID: categoryID))
+            products.add(ProductObject(productName: self.faker.name.lastName() + " " + self.faker.company.suffix(), productID: NSNumber(value: i), categoryID: categoryID))
         }
         productDictionary[categoryID] = products
         return productDictionary?[categoryID] as! NSArray

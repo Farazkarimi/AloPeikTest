@@ -28,7 +28,7 @@ class CategoriesTableViewController: UITableViewController {
     }
     
     private func initialValues(){
-        categoriesDatasourceArray = NSMutableArray(array: FakeDataClass.sharedInstance.categoryListGenerator(capacity: 100))
+        categoriesDatasourceArray = NSMutableArray(array: FakeDataGenerator.sharedInstance.categoryListGenerator(capacity: 100))
         self.tableView.reloadData()
     }
     // MARK: - Table view data source

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		63B7A0D4895C14388CFDD439 /* Pods_AloPeikTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BDF024C40E27CE9A9968D4 /* Pods_AloPeikTest.framework */; };
 		D0281F6621C51BB600914B69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0281F6521C51BB600914B69 /* AppDelegate.swift */; };
-		D0281F6821C51BB600914B69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0281F6721C51BB600914B69 /* ViewController.swift */; };
 		D0281F6B21C51BB600914B69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0281F6921C51BB600914B69 /* Main.storyboard */; };
 		D0281F6D21C51BB700914B69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0281F6C21C51BB700914B69 /* Assets.xcassets */; };
 		D0281F7021C51BB700914B69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0281F6E21C51BB700914B69 /* LaunchScreen.storyboard */; };
@@ -33,7 +32,6 @@
 		67BDF024C40E27CE9A9968D4 /* Pods_AloPeikTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AloPeikTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0281F6221C51BB600914B69 /* AloPeikTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AloPeikTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0281F6521C51BB600914B69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D0281F6721C51BB600914B69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D0281F6A21C51BB600914B69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0281F6C21C51BB700914B69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0281F6F21C51BB700914B69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				D0281F7721C63DDC00914B69 /* View */,
 				D0281F7821C63DE700914B69 /* Controller */,
 				D0281F6521C51BB600914B69 /* AppDelegate.swift */,
-				D0281F6721C51BB600914B69 /* ViewController.swift */,
 				D0281F6921C51BB600914B69 /* Main.storyboard */,
 				D0281F6C21C51BB700914B69 /* Assets.xcassets */,
 				D0281F6E21C51BB700914B69 /* LaunchScreen.storyboard */,
@@ -273,7 +270,6 @@
 				D0281F8321C670C300914B69 /* OrdersManager.swift in Sources */,
 				D0281F8521C695BA00914B69 /* ActiveOrdersTableViewController.swift in Sources */,
 				D0281F7B21C63FC700914B69 /* FakeDataGenerator.swift in Sources */,
-				D0281F6821C51BB600914B69 /* ViewController.swift in Sources */,
 				D0281F7F21C6402300914B69 /* ProductObject.swift in Sources */,
 				D0281F9221C6BBFA00914B69 /* MapViewController.swift in Sources */,
 				D0281F8721C695EA00914B69 /* CategoriesTableViewController.swift in Sources */,

@@ -60,7 +60,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             self.locationManager.startUpdatingLocation()
         }
     }
-
+    
     
     @IBAction func cancelSelectingLocation(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -113,19 +113,21 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     private func updateMarker(){
         let geoCoder = CLGeocoder()
         geoCoder.reverseGeocodeLocation(CLLocation(latitude: self.mapView.centerCoordinate.latitude, longitude: self.mapView.centerCoordinate.longitude)) { (placeMarks, error) in
-            let placeMark:CLPlacemark = (placeMarks?[0])!
-            self.currentAddress = {
-                if((placeMark.locality) != nil){
-                    return placeMark.locality! + placeMark.name!
-                }else{
-                    return placeMark.name
+            if ((placeMarks?[0]) != nil){
+                let placeMark:CLPlacemark = (placeMarks?[0])!
+                self.currentAddress = {
+                    if((placeMark.locality) != nil){
+                        return placeMark.locality! + placeMark.name!
+                    }else{
+                        return placeMark.name
+                    }
+                }()
+                unowned let unownedSelf = self
+                if ((unownedSelf.currentAddress) != nil){
+                    print (unownedSelf.currentAddress)
+                    self.addressLabel.text = unownedSelf.currentAddress
+                    self.doneButton.isEnabled = true
                 }
-            }()
-            unowned let unownedSelf = self
-            if ((unownedSelf.currentAddress) != nil){
-                print (unownedSelf.currentAddress)
-                self.addressLabel.text = unownedSelf.currentAddress
-                self.doneButton.isEnabled = true
             }
         }
     }

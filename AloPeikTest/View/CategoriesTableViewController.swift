@@ -21,14 +21,14 @@ class CategoriesTableViewController: UITableViewController {
     private func initialViews(){
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.topItem?.title = "Categories"
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1564692855, green: 0.6429520249, blue: 0.8870363832, alpha: 1)
         
         self.tableView.allowsSelection = true
         //self.tableView.tableFooterView = UIView()
     }
     
     private func initialValues(){
-        categoriesDatasourceArray = NSMutableArray(array: FakeDataGenerator.sharedInstance.categoryListGenerator(capacity: 100))
+        categoriesDatasourceArray = NSMutableArray(array: MockDataGenerator.sharedInstance.categoryListGenerator(capacity: 100))
         self.tableView.reloadData()
     }
     // MARK: - Table view data source

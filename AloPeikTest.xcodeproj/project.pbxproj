@@ -12,7 +12,7 @@
 		D0281F6B21C51BB600914B69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0281F6921C51BB600914B69 /* Main.storyboard */; };
 		D0281F6D21C51BB700914B69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0281F6C21C51BB700914B69 /* Assets.xcassets */; };
 		D0281F7021C51BB700914B69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0281F6E21C51BB700914B69 /* LaunchScreen.storyboard */; };
-		D0281F7B21C63FC700914B69 /* FakeDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0281F7A21C63FC700914B69 /* FakeDataGenerator.swift */; };
+		D0281F7B21C63FC700914B69 /* MockDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0281F7A21C63FC700914B69 /* MockDataGenerator.swift */; };
 		D0281F7D21C6400E00914B69 /* CategoryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0281F7C21C6400E00914B69 /* CategoryObject.swift */; };
 		D0281F7F21C6402300914B69 /* ProductObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0281F7E21C6402300914B69 /* ProductObject.swift */; };
 		D0281F8121C6403A00914B69 /* OrderObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0281F8021C6403A00914B69 /* OrderObject.swift */; };
@@ -36,7 +36,7 @@
 		D0281F6C21C51BB700914B69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0281F6F21C51BB700914B69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0281F7121C51BB700914B69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0281F7A21C63FC700914B69 /* FakeDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDataGenerator.swift; sourceTree = "<group>"; };
+		D0281F7A21C63FC700914B69 /* MockDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataGenerator.swift; sourceTree = "<group>"; };
 		D0281F7C21C6400E00914B69 /* CategoryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryObject.swift; sourceTree = "<group>"; };
 		D0281F7E21C6402300914B69 /* ProductObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductObject.swift; sourceTree = "<group>"; };
 		D0281F8021C6403A00914B69 /* OrderObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderObject.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		D0281F7821C63DE700914B69 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D0281F7A21C63FC700914B69 /* FakeDataGenerator.swift */,
+				D0281F7A21C63FC700914B69 /* MockDataGenerator.swift */,
 				D0281F8221C670C300914B69 /* OrdersManager.swift */,
 			);
 			path = Controller;
@@ -269,7 +269,7 @@
 				D0281F7D21C6400E00914B69 /* CategoryObject.swift in Sources */,
 				D0281F8321C670C300914B69 /* OrdersManager.swift in Sources */,
 				D0281F8521C695BA00914B69 /* ActiveOrdersTableViewController.swift in Sources */,
-				D0281F7B21C63FC700914B69 /* FakeDataGenerator.swift in Sources */,
+				D0281F7B21C63FC700914B69 /* MockDataGenerator.swift in Sources */,
 				D0281F7F21C6402300914B69 /* ProductObject.swift in Sources */,
 				D0281F9221C6BBFA00914B69 /* MapViewController.swift in Sources */,
 				D0281F8721C695EA00914B69 /* CategoriesTableViewController.swift in Sources */,

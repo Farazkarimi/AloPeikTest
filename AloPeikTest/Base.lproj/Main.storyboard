@@ -31,7 +31,7 @@
         <scene sceneID="3tY-dD-kfd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9qp-0t-Bfa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Categories" id="o2i-VN-Pp5"/>
+                    <tabBarItem key="tabBarItem" title="Categories" image="Categories" id="o2i-VN-Pp5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Yp-Ld-ug8">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -79,7 +79,7 @@
         <scene sceneID="dlh-SE-9f6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jyb-On-eH7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Active Orders" id="Go3-xw-9Qa"/>
+                    <tabBarItem key="tabBarItem" title="Active Orders" image="Orders" id="Go3-xw-9Qa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dvz-M6-yEn">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -140,4 +140,8 @@
             <point key="canvasLocation" x="1404" y="386.35682158920542"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Categories" width="25" height="25"/>
+        <image name="Orders" width="25" height="25"/>
+    </resources>
 </document>

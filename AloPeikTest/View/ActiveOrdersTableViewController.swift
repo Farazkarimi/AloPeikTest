@@ -33,7 +33,7 @@ class ActiveOrdersTableViewController: UITableViewController,OrderManagerDelegat
     private func initialViews(){
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.topItem?.title = "Active Orders"
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.005079371855, green: 0.6022288203, blue: 0.7278308272, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1612317562, green: 0.6466587782, blue: 0.8905015588, alpha: 1)
         
         self.tableView.allowsSelection = false
         //self.tableView.tableFooterView = UIView()
@@ -89,7 +89,7 @@ class ActiveOrdersTableViewController: UITableViewController,OrderManagerDelegat
         case .delivery:
             return "Delivery"
         case .inProgress:
-            return "In Progress"
+            return "in-process"
         case .pending:
             return "Pending"
         }

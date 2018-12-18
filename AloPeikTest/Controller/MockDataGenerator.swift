@@ -9,13 +9,13 @@
 import UIKit
 import Fakery
 
-class FakeDataGenerator: NSObject {
+class MockDataGenerator: NSObject {
     private var categoryListArray:NSMutableArray!
     private var productDictionary:NSMutableDictionary!
     private var faker:Faker!
-    class var sharedInstance: FakeDataGenerator {
+    class var sharedInstance: MockDataGenerator {
         struct Static {
-            static let instance: FakeDataGenerator = FakeDataGenerator()
+            static let instance: MockDataGenerator = MockDataGenerator()
         }
         return Static.instance
     }

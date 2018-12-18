@@ -37,7 +37,7 @@ class ProductsTableViewController: UITableViewController,UITabBarControllerDeleg
     
     private func initialViews(){
         self.navigationItem.title = "Products"
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.156441927, green: 0.646668613, blue: 0.8870350718, alpha: 1)
         
         self.tableView.allowsSelection = true
         //self.tableView.tableFooterView = UIView()
@@ -46,7 +46,7 @@ class ProductsTableViewController: UITableViewController,UITabBarControllerDeleg
     }
     
     private func initialValues(){
-        productsDataSurceArray = NSMutableArray(array: FakeDataGenerator.sharedInstance.generateProductForCategories(categoryID: self.categoryID, capacity: 15))
+        productsDataSurceArray = NSMutableArray(array: MockDataGenerator.sharedInstance.generateProductForCategories(categoryID: self.categoryID, capacity: 15))
         self.tabBarController?.delegate = self
         self.tableView.allowsSelection = false
         self.tableView.reloadData()

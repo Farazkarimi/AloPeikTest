@@ -40,13 +40,12 @@ class ProductsTableViewController: UITableViewController,UITabBarControllerDeleg
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.156441927, green: 0.646668613, blue: 0.8870350718, alpha: 1)
         
         self.tableView.allowsSelection = true
-        //self.tableView.tableFooterView = UIView()
-        
         tableView.register(UINib(nibName: "ProductsTableViewCell", bundle: nil), forCellReuseIdentifier: "productsCell")
     }
     
     private func initialValues(){
         productsDataSurceArray = NSMutableArray(array: MockDataGenerator.sharedInstance.generateProductForCategories(categoryID: self.categoryID, capacity: 15))
+        self.tableView.tableFooterView = UIView()
         self.tabBarController?.delegate = self
         self.tableView.allowsSelection = false
         self.tableView.reloadData()

@@ -15,9 +15,19 @@ protocol OrderManagerDelegate {
 }
 
 
-class OrdersManager: NSObject {
+class OrdersManager{
     
     private var ordersArray:NSMutableArray!
+    private var order = OrderObject() {
+        didSet{
+            ordersArray.add(self.order)
+            if ((self.delegate) != nil){
+                self.delegate.didAddNewOrder(order: self.order)
+            }
+            self.updateOrderStatus(order: self.order)
+        }
+    }
+    
     public var delegate:OrderManagerDelegate!
     
     class var sharedInstance: OrdersManager {
@@ -27,34 +37,29 @@ class OrdersManager: NSObject {
         return Static.instance
     }
     
-    override init() {
+    init() {
         self.ordersArray = NSMutableArray()
     }
     
     public func addOrder(name:String, address:String, latitude:Double, longitude:Double){
-        let order = OrderObject(orderName: name, orderAddress: address, orderStatus: orderState.pending, latitude: latitude, longitude: longitude)
-        ordersArray.add(order)
-        if ((self.delegate) != nil){
-            self.delegate.didAddNewOrder(order: order)
+        self.order = OrderObject(orderName: name, orderAddress: address, orderStatus: orderState.pending, latitude: latitude, longitude: longitude)
     }
-    self.updateOrderStatus(order: order)
-}
-
-
-public func updateOrderStatus(order:OrderObject){
-    unowned let unownedSelf:OrdersManager = self
     
-    DispatchQueue.main.asyncAfter(deadline: .now() + 30.0, execute: {
-        if order.orderStatus.rawValue<4{
-            order.orderStatus = orderState(rawValue: order.orderStatus.rawValue+1)
-            unownedSelf.delegate.didUpdateOrder(order: order)
-        }
-        unownedSelf.updateOrderStatus(order: order)
-    })
-}
-
-
-public func getActiveOrders() -> NSArray{
-    return ordersArray
-}
+    
+    public func updateOrderStatus(order:OrderObject){
+        unowned let unownedSelf:OrdersManager = self
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 30.0, execute: {
+            if order.orderStatus.rawValue<4{
+                order.orderStatus = orderState(rawValue: order.orderStatus.rawValue+1)
+                unownedSelf.delegate.didUpdateOrder(order: order)
+            }
+            unownedSelf.updateOrderStatus(order: order)
+        })
+    }
+    
+    
+    public func getActiveOrders() -> NSArray{
+        return ordersArray
+    }
 }

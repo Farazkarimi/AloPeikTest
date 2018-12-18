@@ -10,9 +10,24 @@ import UIKit
 import Fakery
 
 class MockDataGenerator: NSObject {
+    
     private var categoryListArray:NSMutableArray!
     private var productDictionary:NSMutableDictionary!
     private var faker:Faker!
+    private var categories:NSMutableArray!
+    private var products:NSMutableArray!
+    
+    private var categoryObject = CategoryObject(){
+        didSet{
+            self.categories.add(self.categoryObject)
+        }
+    }
+    
+    private var productObject = ProductObject(){
+        didSet{
+            self.products.add(self.productObject)
+        }
+    }
     class var sharedInstance: MockDataGenerator {
         struct Static {
             static let instance: MockDataGenerator = MockDataGenerator()
@@ -31,12 +46,12 @@ class MockDataGenerator: NSObject {
             return self.categoryListArray
         }
         
-        let categories = NSMutableArray(capacity: Int(truncating: capacity))
+        self.categories = NSMutableArray(capacity: Int(truncating: capacity))
         
         for i in 0...Int(truncating: capacity)-1 {
-            categories.add(CategoryObject(categoryName: self.faker.name.firstName() + " " + self.faker.company.name(), categoryID: NSNumber(value: i)))
+            self.categoryObject = CategoryObject(categoryName: self.faker.name.firstName() + " " + self.faker.company.name(), categoryID: NSNumber(value: i))
         }
-        categoryListArray = categories
+        categoryListArray = self.categories
         
         return categoryListArray
     }
@@ -46,11 +61,11 @@ class MockDataGenerator: NSObject {
             return productDictionary?[categoryID] as! NSArray;
         }
         
-        let products = NSMutableArray(capacity: Int(truncating: capacity))
+        self.products = NSMutableArray(capacity: Int(truncating: capacity))
         for i in 0...Int(truncating: capacity)-1{
-            products.add(ProductObject(productName: self.faker.name.lastName() + " " + self.faker.company.suffix(), productID: NSNumber(value: i), categoryID: categoryID))
+            self.productObject = ProductObject(productName: self.faker.name.lastName() + " " + self.faker.company.suffix(), productID: NSNumber(value: i), categoryID: categoryID)
         }
-        productDictionary[categoryID] = products
+        productDictionary[categoryID] = self.products
         return productDictionary?[categoryID] as! NSArray
     }
 }

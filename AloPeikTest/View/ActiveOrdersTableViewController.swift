@@ -33,7 +33,7 @@ class ActiveOrdersTableViewController: UITableViewController,OrderManagerDelegat
     private func initialViews(){
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.topItem?.title = "Active Orders"
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.005079371855, green: 0.6022288203, blue: 0.7278308272, alpha: 1)
         
         self.tableView.allowsSelection = false
         //self.tableView.tableFooterView = UIView()
